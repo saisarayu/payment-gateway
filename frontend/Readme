@@ -1,0 +1,182 @@
+
+
+# 💳 Payment Gateway Integration with Stripe/PayPal & Cloudinary
+
+## 🧠 Project Overview
+
+This project demonstrates how to integrate **secure online payments** into a web application using **Stripe** or **PayPal**.
+It also includes **Cloudinary integration** for managing product images and uploading payment receipts or invoices.
+
+The project is built using **Next.js (frontend)** and **Node.js + Express (backend)**, with **MongoDB** for data storage.
+
+---
+
+## 🚀 Features
+
+✅ Secure payment processing using Stripe or PayPal APIs
+✅ Checkout page for collecting payment details
+✅ Real-time payment status updates with Webhooks
+✅ Cloudinary integration for image and invoice uploads
+✅ Order creation and verification in MongoDB
+✅ Invoice/receipt generation after successful payment
+✅ Responsive UI built with Next.js
+✅ Environment-based configuration for security
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer            | Technology                        |
+| ---------------- | --------------------------------- |
+| **Frontend**     | Next.js (React + API routes)      |
+| **Backend**      | Node.js + Express.js              |
+| **Database**     | MongoDB (Mongoose)                |
+| **Payment API**  | Stripe / PayPal SDK               |
+| **File Storage** | Cloudinary                        |
+| **Optional**     | Nodemailer (for sending receipts) |
+
+---
+
+## 📁 Folder Structure
+
+```
+payment-gateway-project/
+ ├── frontend/                 # Next.js frontend
+ │   ├── pages/                # Pages (home, checkout, success, cancel)
+ │   ├── components/           # UI components
+ │   ├── lib/                  # API helper (Axios config)
+ │   ├── styles/               # CSS files
+ │   └── .env.local            # Frontend environment variables
+ │
+ └── backend/                  # Express.js backend
+     ├── src/
+     │   ├── config/           # DB, Stripe, Cloudinary setup
+     │   ├── models/           # Product & Order schemas
+     │   ├── routes/           # API routes
+     │   ├── controllers/      # Logic for routes
+     │   ├── webhooks/         # Stripe webhook handler
+     │   ├── utils/            # Helper functions (invoice, email)
+     │   ├── app.js            # Express setup
+     │   └── server.js         # Server entry point
+     └── .env                  # Backend environment variables
+```
+
+---
+
+## 🔐 Environment Variables
+
+### Frontend (`.env.local`)
+
+```bash
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_test_1234
+NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
+```
+
+---
+
+## 🛠️ Installation Steps
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/saisarayu/payment-gateway.git
+cd payment-gateway-project
+```
+
+### 2️⃣ Install dependencies
+
+**Frontend**
+
+```bash
+cd frontend
+npm install
+```
+
+**Backend**
+
+```bash
+cd backend
+npm install
+```
+
+### 3️⃣ Run the development servers
+
+**Backend**
+
+```bash
+npm run dev
+```
+
+**Frontend**
+
+```bash
+npm run dev
+```
+
+* Frontend → [http://localhost:3000](http://localhost:3000)
+* Backend → [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 💳 Payment Flow
+
+1️⃣ User selects a product on the frontend.
+2️⃣ Clicks “Pay Now” → Backend creates a **payment session** (Stripe/PayPal).
+3️⃣ User completes payment securely on the gateway page.
+4️⃣ Gateway redirects to `/success` or `/cancel`.
+5️⃣ Webhook updates payment status in MongoDB.
+6️⃣ Invoice generated and uploaded to **Cloudinary**.
+7️⃣ Optional: Email invoice link to user.
+
+---
+
+## ☁️ Cloudinary Integration
+
+Cloudinary is used for:
+
+* Hosting **product images** (to display in frontend)
+* Storing **generated invoices or receipts**
+
+You can upload files using Cloudinary’s REST API or Node.js SDK.
+
+---
+
+## 🧾 Example Use Cases
+
+* 🛍️ E-commerce checkout system
+* 🎟️ Event ticket booking
+* 💰 Donation or crowdfunding platforms
+* 🎧 Subscription-based services
+* 🧾 Online invoice & receipt generation system
+
+---
+
+## 🏁 Outcome
+
+After completing this project, you’ll understand:
+
+✅ How online payment gateways (Stripe/PayPal) work
+✅ How to handle secure payment sessions and webhooks
+✅ How to integrate Cloudinary for media storage
+✅ How to build and connect full-stack apps with Next.js + Node.js
+✅ How to manage real-world business logic (orders, receipts, invoices)
+
+---
+
+## 💡 Future Enhancements
+
+* Add user authentication (JWT / NextAuth)
+* Admin dashboard to view all transactions
+* Send invoices via email
+* Support multiple currencies
+* Include refund and dispute management
+
+---
+
+## 👨‍💻 Author
+
+**Sai Sarayu S**
+💼 Full Stack Developer
+🌐 [https://sarayu-portfolio.netlify.app/]
+📧 [Sarayu2926@gmail.com]
+
