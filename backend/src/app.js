@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("💳 Payment Gateway API running...");
+  res.send(" Payment Gateway API running...");
 });
 
 export default app;
